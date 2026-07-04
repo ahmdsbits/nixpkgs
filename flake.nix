@@ -1,7 +1,7 @@
 {
   description = "Unfree nixpkgs wrapper";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixox-unstable";
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
   outputs = { self, nixpkgs }: nixpkgs // {
     legacyPackages = builtins.mapAttrs (system: _:
