@@ -29,6 +29,10 @@ jobs:
 
           # Only commit and push if the lockfile actually changed
           if ! git diff-index --quiet HEAD; then
-            git commit -m "chore(nix): update nixpkgs"
+            if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+              git commit -m "chore(nix): update nixpkgs"
+            else
+              git commit -m "chore(nix): run weekly nixpkgs update"
+            fi
             git push
           fi
