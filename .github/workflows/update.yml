@@ -29,6 +29,6 @@ jobs:
 
           # Only commit and push if the lockfile actually changed
           if ! git diff-index --quiet HEAD; then
-            git commit -m "chore(nix): nixpkgs update"
+            git commit -m "chore(nix): update nixpkgs"
             git push
           fi
